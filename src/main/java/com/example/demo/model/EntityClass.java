@@ -16,7 +16,7 @@ public class EntityClass {
 	  private int id;
 
 	  @Column(name = "imageFile")
-	  private String imageFile;
+	  private String image;
    
 	public int getID() {
 		return id;
@@ -24,10 +24,10 @@ public class EntityClass {
 	public void setID(int iD) {
 		id = iD;
 	}
-	public String getImageFile() {
-		return imageFile;
+	public String getImage() {
+		return image;
 	}
-	public void setImageFile(String ImageFile) {
-		this.imageFile = ImageFile;
+	public void setImage(String imageFile) {
+		this.image = imageFile;
 	}
 }
