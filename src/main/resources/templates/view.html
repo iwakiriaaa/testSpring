@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>testApp</title>
+</table>
+</head>
+<body>
+	<p th:text = "*{testtext}"></p>
+	<table class = "table" border="1">
+		<thead>
+			<tr>
+				<th>社員ID</th>
+				<th>氏名</th>
+				<th>年齢</th>
+			</tr>
+		</thead>
+		<tbody>		
+			<tr th:each="syain : ${userlist}" th:object="${syain}">
+				<td th:text = "*{id}"></td>
+				<td th:text = "*{name}"></td>
+				<td th:text = "*{age}"></td>
+			</tr>	
+		</tbody>
+	</table>			
+</body>
+</html>

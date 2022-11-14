@@ -1,33 +1,45 @@
 package com.example.demo.model;
 
 import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Entity;
 
 @Entity
-@Table(name="upload")
+@Table(name="syain")
 public class EntityClass {
     
-	  @Id
-	  @Column(name = "ID")
-	  private int id;
+  @Id
+  @Column(name = "社員ID")
+  private int id;
 
-	  @Column(name = "imageFile")
-	  private String image;
+  @Column(name = "氏名")
+  private String name;
+  
+  @Column(name = "年齢")
+  private String age;
    
-	public int getID() {
-		return id;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public void setID(int iD) {
-		id = iD;
+	
+	public int getId() {
+		return this.id;
 	}
-	public String getImage() {
-		return image;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public void setImage(String imageFile) {
-		this.image = imageFile;
+	
+	public String getName() {
+		return this.name;
 	}
+	
+	public void setAge(String age) {
+		this.age = age;
+	}
+	
+	public String getAge() {
+		return this.age;
+	}	
 }
