@@ -20,7 +20,6 @@ import com.example.demo.service.UserService;
 
 @Controller
 public class MainController {
-	String testtext = "";
 	
     @Autowired
     UserService userService;
@@ -28,13 +27,12 @@ public class MainController {
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String displayList(Model model) {	   
 		List<EntityClass> userlist = userService.searchAll();
+		
 		if (userlist.size() > 0) {
-			testtext = "データがみつかりました！";
-			model.addAttribute("testtext", testtext );
+			model.addAttribute("testtext", "登録不可能");
 			model.addAttribute("userlist", userlist);
 		} else {
-			testtext = "データがありません";
-			model.addAttribute("testtext", testtext );
+			model.addAttribute("testtext", "登録可能");
 		}
 		
 		return "view";
