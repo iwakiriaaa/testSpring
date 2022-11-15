@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"xmlns:th="http://www.thymeleaf.org">
+<html  xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>testApp</title>
@@ -13,13 +13,15 @@
 				<th>社員ID</th>
 				<th>氏名</th>
 				<th>年齢</th>
+				<th>所属</th>
 			</tr>
 		</thead>
 		<tbody>		
-			<tr th:each="syain : ${userlist}" th:object="${syain}">
-				<td th:text = "*{id}"></td>
-				<td th:text = "*{name}"></td>
-				<td th:text = "*{age}"></td>
+			<tr th:each="userlist:${userlist}">
+				<td th:text = "${userlist.SyainEntityClass.syainId}"></td>
+				<td th:text = "${userlist.SyainEntityClass.name}"></td>
+				<td th:text = "${userlist.SyainEntityClass.age}"></td>
+				<td th:text = "${userlist.syozokuName}"></td>
 			</tr>	
 		</tbody>
 	</table>			

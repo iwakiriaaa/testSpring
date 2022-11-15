@@ -15,7 +15,8 @@ import org. springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.demo.model.EntityClass;
+import com.example.demo.model.SyainEntityClass;
+import com.example.demo.model.SyozokuEntityClass;
 import com.example.demo.service.UserService;
 
 @Controller
@@ -26,13 +27,13 @@ public class MainController {
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String displayList(Model model) {	   
-		List<EntityClass> userlist = userService.searchAll();
+		List<SyozokuEntityClass> userlist = userService.searchAll();
 		
 		if (userlist.size() > 0) {
-			model.addAttribute("testtext", "登録不可能");
+			model.addAttribute("testtext", "結果あり");
 			model.addAttribute("userlist", userlist);
 		} else {
-			model.addAttribute("testtext", "登録可能");
+			model.addAttribute("testtext", "結果なし");
 		}
 		
 		return "view";
